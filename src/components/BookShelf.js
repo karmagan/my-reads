@@ -8,7 +8,7 @@ function BookShelf() {
       <div className="bookshelf-books">
         <ol className="books-grid">
           <li>
-            <Book />
+            {/* <Book /> */}
           </li>
           <li>
             <div className="book">

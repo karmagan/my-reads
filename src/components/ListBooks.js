@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import BookShelf from "./BookShelf";
-
-function ListBooks() {
+import Book from "./Book";
+function ListBooks(props) {
+    const books = props.books
   return (
     <div className="list-books">
       <div className="list-books-title">
@@ -10,7 +11,7 @@ function ListBooks() {
       </div>
       <div className="list-books-content">
         <div>
-          <BookShelf />
+          <BookShelf/>
           <div className="bookshelf">
             <h2 className="bookshelf-title">Want to Read</h2>
             <div className="bookshelf-books">
@@ -179,6 +180,7 @@ function ListBooks() {
               </ol>
             </div>
           </div>
+          {books.map((book)=><Book book={book}></Book>)}
         </div>
       </div>
       <div className="open-search">
