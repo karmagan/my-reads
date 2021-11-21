@@ -19,7 +19,7 @@ class BooksApp extends React.Component {
       <div className="app">
         <Routes>
           <Route path="/" element={<ListBooks books={this.state.books} />} />
-          <Route path="/search" element={<Search />} />
+          <Route path="/search" element={<Search books={this.state.books} />} />
         </Routes>
       </div>
     );
