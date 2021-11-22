@@ -20,12 +20,6 @@ class BooksApp extends React.Component {
         this.setState({ books });
       });
     });
-
-    //   this.state.books.filter((b)=>b.id === book.id).length  === 0
-    //     ? BooksAPI.get(book.id).then((b)=>{
-    //       b.shelf = shelf
-    //       this.setState((s)=>({books:[...s.books,b]}))})
-    //   : this.setState((s)=>s.books.filter((b)=>b.id === book.id))
   };
   render() {
     return (
@@ -43,7 +37,10 @@ class BooksApp extends React.Component {
           <Route
             path="/search"
             element={
-              <Search books={this.state.books} changeShelf={this.changeShelf} />
+              <Search 
+                shelfBooks={this.state.books} 
+                changeShelf={this.changeShelf} 
+              />
             }
           />
         </Routes>

@@ -10,9 +10,12 @@ function BookShelf(props) {
         <ol className="books-grid">
           {books.map((book) => (
             <li key={book.id}>
-              <Book 
-                book={book} 
-                changeShelf={changeShelf} 
+              <Book
+                title={book.title}
+                authors={book.authors}
+                shelf={book.shelf}
+                imageLinks={book.imageLinks}
+                changeShelf={(shelf)=>changeShelf(book,shelf)}
               />
             </li>
           ))}
