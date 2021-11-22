@@ -14,7 +14,7 @@ class Search extends React.Component {
 
     if (value !== "") {
       BooksAPI.search(value).then((filteredBooks) =>
-        this.setState({ filteredBooks })
+       this.setState({ filteredBooks })
       );
     }
   };
@@ -22,9 +22,10 @@ class Search extends React.Component {
   render() {
     const { query, filteredBooks } = this.state;
     const { shelfBooks, changeShelf } = this.props;
-    const books = filteredBooks.map(
+    let books = []
+    filteredBooks.error || ( books = filteredBooks.map(
       (fb) => shelfBooks.filter((sb) => sb.id === fb.id)[0] || fb
-    );
+    ))
     return (
       <div className="search-books">
         <div className="search-books-bar">
