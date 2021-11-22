@@ -12,13 +12,11 @@ class Search extends React.Component {
     const value = e.target.value;
     this.setState({ query: e.target.value });
 
-    if (value !== "") {
-      BooksAPI.search(value).then((filteredBooks) =>
-        this.setState({ filteredBooks })
-      );
-    } else {
-      this.setState({ filteredBooks: [] });
-    }
+    BooksAPI.search(value).then((filteredBooks) =>
+      value
+        ? this.setState({ filteredBooks })
+        : this.setState({ filteredBooks: [] })
+    );
   };
 
   render() {
