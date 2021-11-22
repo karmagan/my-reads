@@ -17,6 +17,7 @@ class BooksApp extends React.Component {
   changeShelf = (book, shelf) => {
     book.shelf = shelf;
     const books = this.state.books
+    // if not present, add the book to state.books, otherwise update 
     if (books.filter((b) => b.id === book.id).length === 0) {
       this.setState(({ books: [...books, book] }));
     } else {
