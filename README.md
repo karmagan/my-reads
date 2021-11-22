@@ -1,9 +1,9 @@
 # MyReads Project
 
 This app helps you keep track of books that you are currently reading, want to read or read already. The books are categorized into three shelves: "Currently Reading", "Want to Read" and "Read". The app has two pages: one shows the books that you have put in shelves and the other page where you can search for and add more books to your shelves.
-To add more book just click the add button at the lower right corner of the page.
+To add more books just click the add button at the lower right corner of the page.
 
-## TL;DR
+## Installation
 
 To use the app:
 
