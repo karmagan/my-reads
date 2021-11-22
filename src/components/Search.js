@@ -9,7 +9,7 @@ class Search extends React.Component {
     filteredBooks: [],
   };
   updateInput = (e) => {
-    const value = e.target.value;
+    const value = e.target.value.replace(/\s+/g, ' ').trim();
     this.setState({ query: e.target.value });
     value
       ? BooksAPI.search(value).then((filteredBooks) =>

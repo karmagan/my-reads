@@ -1,9 +1,8 @@
 import React from "react";
 
 class Book extends React.Component {
-
   render() {
-    const {title, authors, shelf, imageLinks, changeShelf} = this.props
+    const { title, authors, shelf, imageLinks, changeShelf } = this.props;
     return (
       <div className="book">
         <div className="book-top">
@@ -21,7 +20,7 @@ class Book extends React.Component {
           <div className="book-shelf-changer">
             <select
               value={shelf ? shelf : "none"}
-              onChange={(e)=>changeShelf(e.target.value)}
+              onChange={(e) => changeShelf(e.target.value)}
             >
               <option value="move" disabled>
                 Move to...
@@ -33,8 +32,8 @@ class Book extends React.Component {
             </select>
           </div>
         </div>
-        <div className="book-title">{title}</div>
-        <div className="book-authors">{authors}</div>
+        <div className="book-title">{title ? title : "[ No title ]"}</div>
+        <div className="book-authors">{authors ? authors : "[ No authors ]"}</div>
       </div>
     );
   }
