@@ -14,18 +14,21 @@ class Search extends React.Component {
 
     if (value !== "") {
       BooksAPI.search(value).then((filteredBooks) =>
-       this.setState({ filteredBooks })
+        this.setState({ filteredBooks })
       );
+    } else {
+      this.setState({ filteredBooks: [] });
     }
   };
 
   render() {
     const { query, filteredBooks } = this.state;
     const { shelfBooks, changeShelf } = this.props;
-    let books = []
-    filteredBooks.error || ( books = filteredBooks.map(
-      (fb) => shelfBooks.filter((sb) => sb.id === fb.id)[0] || fb
-    ))
+    let books = [];
+    filteredBooks.error ||
+      (books = filteredBooks.map(
+        (fb) => shelfBooks.filter((sb) => sb.id === fb.id)[0] || fb
+      ));
     return (
       <div className="search-books">
         <div className="search-books-bar">
