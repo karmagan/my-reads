@@ -16,13 +16,14 @@ function ListBooks(props) {
       </div>
       <div className="list-books-content">
         <div>
-          {shelves.map((shelf)=>
-          <BookShelf
-            key={shelf.name}
-            shelfName={shelf.text}
-            books={books.filter((book) => book.shelf === shelf.name)}
-            changeShelf={changeShelf}
-          />)}
+          {shelves.map((shelf) => (
+            <BookShelf
+              key={shelf.name}
+              shelfName={shelf.text}
+              books={books.filter((book) => book.shelf === shelf.name)}
+              changeShelf={changeShelf}
+            />
+          ))}
         </div>
       </div>
       <div className="open-search">

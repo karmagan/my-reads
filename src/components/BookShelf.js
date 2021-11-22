@@ -6,9 +6,10 @@ function BookShelf(props) {
   return (
     <div className="bookshelf">
       <h2 className="bookshelf-title">{shelfName}</h2>
+      {/* if the books is empty show a message otherwise list the books */}
       {books.length === 0 
-      ? (<p>No books found.</p> )
-      : (<div className="bookshelf-books">
+      ? <p>No books found.</p>
+      : <div className="bookshelf-books">
           <ol className="books-grid">
             {books.map((book) => (
               <li key={book.id}>
@@ -23,7 +24,7 @@ function BookShelf(props) {
             ))}
           </ol>
         </div>
-      )}
+      }
     </div>
   );
 }
